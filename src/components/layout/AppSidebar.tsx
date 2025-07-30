@@ -63,20 +63,20 @@ export function AppSidebar() {
 
   const getNavCls = (path: string) =>
     isActive(path) 
-      ? "bg-primary/10 text-primary border-r-2 border-primary font-medium" 
-      : "text-muted-foreground hover:text-foreground hover:bg-accent/50";
+      ? "bg-sidebar-primary/10 text-sidebar-primary border-r-2 border-sidebar-primary font-medium" 
+      : "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent/50";
 
   return (
-    <Sidebar className={`${collapsed ? "w-16" : "w-64"} border-r border-border/50 bg-card/50 backdrop-blur-xl`} collapsible="icon">
+    <Sidebar className={`${collapsed ? "w-16" : "w-64"} border-r border-border/50 bg-sidebar backdrop-blur-xl transition-all duration-300 animate-slide-in`} collapsible="icon">
       <SidebarHeader className="p-4 border-b border-border/50">
         {!collapsed ? (
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
               <BarChart3 className="w-4 h-4 text-white" />
             </div>
-            <div>
-              <h2 className="text-lg font-bold gradient-text">ADmyBRAND</h2>
-              <p className="text-xs text-muted-foreground">Insights</p>
+            <div className="min-w-0 flex-1">
+              <h2 className="text-lg font-bold gradient-text truncate">ADmyBRAND</h2>
+              <p className="text-xs text-muted-foreground truncate">Insights</p>
             </div>
           </div>
         ) : (
@@ -98,11 +98,11 @@ export function AppSidebar() {
                   <SidebarMenuButton asChild>
                     <NavLink
                       to={item.url}
-                      className={`${getNavCls(item.url)} transition-all duration-200 group`}
+                      className={`${getNavCls(item.url)} transition-all duration-200 group flex items-center px-3 py-2 rounded-md animate-hover`}
                       end={item.url === "/"}
                     >
-                      <item.icon className={`h-4 w-4 ${collapsed ? "mx-auto" : "mr-3"} group-hover:scale-110 transition-transform`} />
-                      {!collapsed && <span>{item.title}</span>}
+                      <item.icon className={`h-4 w-4 ${collapsed ? "mx-auto" : "mr-3"} group-hover:scale-110 transition-transform flex-shrink-0`} />
+                      {!collapsed && <span className="truncate">{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -122,10 +122,10 @@ export function AppSidebar() {
                   <SidebarMenuButton asChild>
                     <NavLink
                       to={item.url}
-                      className={`${getNavCls(item.url)} transition-all duration-200 group`}
+                      className={`${getNavCls(item.url)} transition-all duration-200 group flex items-center px-3 py-2 rounded-md animate-hover`}
                     >
-                      <item.icon className={`h-4 w-4 ${collapsed ? "mx-auto" : "mr-3"} group-hover:scale-110 transition-transform`} />
-                      {!collapsed && <span>{item.title}</span>}
+                      <item.icon className={`h-4 w-4 ${collapsed ? "mx-auto" : "mr-3"} group-hover:scale-110 transition-transform flex-shrink-0`} />
+                      {!collapsed && <span className="truncate">{item.title}</span>}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -140,15 +140,15 @@ export function AppSidebar() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="w-full justify-start gap-3 h-auto p-3">
-                <Avatar className="w-8 h-8">
-                  <AvatarImage src="/placeholder.svg" />
+                <Avatar className="w-8 h-8 flex-shrink-0">
+                  <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" />
                   <AvatarFallback className="bg-gradient-primary text-white">JD</AvatarFallback>
                 </Avatar>
-                <div className="flex-1 text-left">
-                  <p className="text-sm font-medium">John Doe</p>
-                  <p className="text-xs text-muted-foreground">john@company.com</p>
+                <div className="flex-1 text-left min-w-0">
+                  <p className="text-sm font-medium truncate">John Doe</p>
+                  <p className="text-xs text-muted-foreground truncate">john@company.com</p>
                 </div>
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="w-4 h-4 flex-shrink-0" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
@@ -168,7 +168,7 @@ export function AppSidebar() {
           </DropdownMenu>
         ) : (
           <Avatar className="w-8 h-8 mx-auto">
-            <AvatarImage src="/placeholder.svg" />
+            <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" />
             <AvatarFallback className="bg-gradient-primary text-white">JD</AvatarFallback>
           </Avatar>
         )}

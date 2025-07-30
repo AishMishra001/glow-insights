@@ -1,12 +1,25 @@
+import { useState, useEffect } from "react";
 import { DashboardHeader } from "./DashboardHeader";
 import { MetricCard } from "./MetricCard";
 import { RevenueChart } from "./RevenueChart";
 import { ChannelsChart } from "./ChannelsChart";
 import { TrafficChart } from "./TrafficChart";
 import { CampaignTable } from "./CampaignTable";
+import { StatsSkeleton, ChartSkeleton } from "@/components/ui/loading-skeletons";
 import { metricsData } from "@/data/mockData";
 
 export function Dashboard() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="p-6 space-y-6">
       {/* Background Pattern */}
@@ -17,27 +30,41 @@ export function Dashboard() {
           <DashboardHeader />
 
           {/* Metrics Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {metricsData.map((metric, index) => (
-              <MetricCard 
-                key={metric.id} 
-                metric={metric} 
-                index={index}
-              />
-            ))}
-          </div>
+          {isLoading ? (
+            <StatsSkeleton />
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {metricsData.map((metric, index) => (
+                <MetricCard 
+                  key={metric.id} 
+                  metric={metric} 
+                  index={index}
+                />
+              ))}
+            </div>
+          )}
 
           {/* Charts Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="lg:col-span-2">
-              <RevenueChart />
+          {isLoading ? (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="lg:col-span-2">
+                <ChartSkeleton />
+              </div>
+              <ChartSkeleton />
+              <ChartSkeleton />
             </div>
-            <ChannelsChart />
-            <TrafficChart />
-          </div>
+          ) : (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="lg:col-span-2">
+                <RevenueChart />
+              </div>
+              <ChannelsChart />
+              <TrafficChart />
+            </div>
+          )}
 
           {/* Data Table */}
-          <CampaignTable />
+          {!isLoading && <CampaignTable />}
 
         {/* Footer */}
         <div className="text-center py-8">

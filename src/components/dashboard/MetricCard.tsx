@@ -28,11 +28,11 @@ export function MetricCard({ metric, index }: MetricCardProps) {
 
   return (
     <Card 
-      className="glass-card p-6 hover:shadow-primary/20 transition-all duration-300 animate-enter group"
+      className="glass-card p-6 hover:shadow-primary/20 transition-all duration-300 animate-enter group animate-hover cursor-pointer"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="flex items-center justify-between mb-4">
-        <div className={`p-3 rounded-xl bg-gradient-to-r ${colorMap[metric.color]} shadow-lg`}>
+        <div className={`p-3 rounded-xl bg-gradient-to-r ${colorMap[metric.color]} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
           <Icon className="w-6 h-6 text-white" />
         </div>
         <div className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${

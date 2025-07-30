@@ -1,73 +1,266 @@
-# Welcome to your Lovable project
+# ADmyBRAND Insights - Modern Analytics Dashboard
 
-## Project info
+A sophisticated, real-time analytics dashboard built with React, TypeScript, and modern web technologies. This application provides comprehensive insights into marketing campaigns, audience analytics, and business performance metrics.
 
-**URL**: https://lovable.dev/projects/723de8ba-c604-49c0-80a5-502a34c56f96
+![ADmyBRAND Insights Dashboard](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
+![React](https://img.shields.io/badge/React-18.2.0-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.3-purple)
+![Vite](https://img.shields.io/badge/Vite-4.4-orange)
 
-## How can I edit this code?
+## ✨ Features
 
-There are several ways of editing your application.
+### 🎨 **Modern UI/UX**
+- **Dark/Light Theme Toggle** - Seamless theme switching with system preference detection
+- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
+- **Smooth Animations** - Enhanced user experience with CSS animations and transitions
+- **Glass Morphism** - Modern glass effect design elements
+- **Typography System** - Consistent and beautiful typography throughout the app
 
-**Use Lovable**
+### 📊 **Analytics Dashboard**
+- **Real-time Metrics** - Live performance indicators and KPIs
+- **Interactive Charts** - Revenue, traffic, and channel analytics
+- **Campaign Management** - Track and analyze marketing campaigns
+- **Audience Insights** - Detailed audience demographics and behavior
+- **Data Sources** - Connect and manage multiple data integrations
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/723de8ba-c604-49c0-80a5-502a34c56f96) and start prompting.
+### 🔧 **Technical Features**
+- **TypeScript** - Full type safety and better development experience
+- **React Query** - Efficient data fetching and caching
+- **React Router** - Client-side routing with nested routes
+- **Tailwind CSS** - Utility-first CSS framework
+- **Shadcn/ui** - High-quality, accessible UI components
+- **Lucide Icons** - Beautiful, customizable icons
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🚀 **Performance & UX**
+- **Skeleton Loading** - Smooth loading states for better perceived performance
+- **Lazy Loading** - Optimized component loading
+- **Error Boundaries** - Graceful error handling
+- **Accessibility** - WCAG compliant design
+- **SEO Optimized** - Search engine friendly
 
-**Use your preferred IDE**
+## 🛠️ Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Frontend
+- **React 18** - UI library with hooks and concurrent features
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Fast build tool and development server
+- **Tailwind CSS** - Utility-first CSS framework
+- **Shadcn/ui** - Re-usable UI components
+- **Lucide React** - Icon library
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### State Management & Data
+- **React Query (TanStack Query)** - Server state management
+- **React Router** - Client-side routing
+- **Context API** - Local state management
 
-Follow these steps:
+### Development Tools
+- **ESLint** - Code linting
+- **Prettier** - Code formatting
+- **TypeScript** - Static type checking
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 📦 Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn package manager
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Setup Instructions
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/glow-insights.git
+   cd glow-insights
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:5173`
+
+## 🏗️ Project Structure
+
+```
+glow-insights/
+├── public/                 # Static assets
+├── src/
+│   ├── components/         # Reusable UI components
+│   │   ├── dashboard/      # Dashboard-specific components
+│   │   ├── layout/         # Layout components (Sidebar, Header)
+│   │   ├── theme/          # Theme provider and toggle
+│   │   └── ui/             # Base UI components (shadcn/ui)
+│   ├── hooks/              # Custom React hooks
+│   ├── pages/              # Page components
+│   ├── data/               # Mock data and API utilities
+│   ├── lib/                # Utility functions
+│   ├── App.tsx            # Main app component
+│   └── main.tsx           # App entry point
+├── tailwind.config.ts     # Tailwind CSS configuration
+├── tsconfig.json          # TypeScript configuration
+└── package.json           # Dependencies and scripts
 ```
 
-**Edit a file directly in GitHub**
+## 🎯 Key Components
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Dashboard Components
+- **MetricCard** - Display key performance indicators
+- **RevenueChart** - Revenue analytics visualization
+- **TrafficChart** - Website traffic analysis
+- **ChannelsChart** - Marketing channel performance
+- **CampaignTable** - Campaign management table
 
-**Use GitHub Codespaces**
+### Layout Components
+- **AppLayout** - Main application layout
+- **AppSidebar** - Navigation sidebar with collapsible design
+- **DashboardHeader** - Dashboard page header
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Theme System
+- **ThemeProvider** - Theme context and management
+- **ThemeToggle** - Theme switching component
 
-## What technologies are used for this project?
+### Loading States
+- **Skeleton Components** - Loading placeholders for various UI elements
+- **LoadingProvider** - Global loading state management
 
-This project is built with:
+## 🎨 Theme System
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The application features a sophisticated theme system with:
 
-## How can I deploy this project?
+### Color Palette
+- **Primary**: Electric Blue (#0066FF)
+- **Secondary**: Sophisticated Purple (#6B46C1)
+- **Success**: Electric Green (#10B981)
+- **Warning**: Vibrant Orange (#F59E0B)
+- **Destructive**: Red (#EF4444)
 
-Simply open [Lovable](https://lovable.dev/projects/723de8ba-c604-49c0-80a5-502a34c56f96) and click on Share -> Publish.
+### Theme Modes
+- **Dark Theme** - Default theme with dark backgrounds
+- **Light Theme** - Alternative light mode
+- **System Theme** - Automatically follows OS preference
 
-## Can I connect a custom domain to my Lovable project?
+## 📱 Responsive Design
 
-Yes, you can!
+The dashboard is fully responsive with breakpoints:
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🚀 Available Scripts
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```bash
+# Development
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+
+# Code Quality
+npm run lint         # Run ESLint
+npm run type-check   # Run TypeScript type checking
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+Create a `.env` file in the root directory:
+
+```env
+VITE_API_URL=your_api_url_here
+VITE_APP_NAME=ADmyBRAND Insights
+```
+
+### Tailwind Configuration
+The project uses a custom Tailwind configuration with:
+- Custom color palette
+- Extended spacing and typography
+- Custom animations and keyframes
+- Glass morphism utilities
+
+## 📊 Data Sources
+
+The dashboard supports integration with:
+- **Google Analytics** - Website analytics
+- **Facebook Ads** - Advertising metrics
+- **Shopify** - E-commerce data
+- **Mailchimp** - Email marketing
+- **HubSpot** - CRM data
+- **Stripe** - Payment processing
+
+## 🎯 Features in Detail
+
+### Dashboard Analytics
+- Real-time revenue tracking
+- Traffic source analysis
+- Campaign performance metrics
+- Audience demographics
+- Conversion rate optimization
+
+### Campaign Management
+- Campaign creation and editing
+- Performance tracking
+- A/B testing results
+- Budget allocation
+- ROI analysis
+
+### Audience Insights
+- Demographic breakdown
+- Geographic distribution
+- Behavioral patterns
+- Engagement metrics
+- Segmentation tools
+
+### Data Integration
+- Multiple platform connections
+- Real-time data synchronization
+- Error handling and retry logic
+- Data validation and cleaning
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Development Guidelines
+- Follow TypeScript best practices
+- Use meaningful component and variable names
+- Add proper error handling
+- Include loading states
+- Write responsive code
+- Follow the existing code style
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **Shadcn/ui** - For the excellent UI component library
+- **Tailwind CSS** - For the utility-first CSS framework
+- **Lucide** - For the beautiful icon set
+- **React Query** - For efficient data fetching
+- **Vite** - For the fast build tool
+
+## 📞 Support
+
+For support and questions:
+- Create an issue in the GitHub repository
+- Email: support@admybrand.com
+- Documentation: [docs.admybrand.com](https://docs.admybrand.com)
+
+---
+
+**Built with ❤️ by the ADmyBRAND Team**
